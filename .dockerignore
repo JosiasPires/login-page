@@ -1,0 +1,8 @@
+# Directory
+.git
+.github/
+build/
+node_modules/
+
+# Files
+.env*
