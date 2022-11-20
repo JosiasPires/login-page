@@ -1,0 +1,41 @@
+name: CD
+on:
+  push:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+    branches:
+      - release/*
+      - hotfix/*
+      - feature/*
+      - bugfix/*
+jobs:
+  approval:
+    name: AUTHORIZATION
+    runs-on: ubuntu-latest
+    steps:
+    - name: authorizing...
+      uses: trstringer/manual-approval@v1
+      with:
+        secret: ${{ github.TOKEN }}
+        approvers: ${{ secrets.DEPLOY_APPROVERS }}
+        minimum-approvals: 1
+        issue-title: "Issue Approval"
+  release:
+    needs: approval
+    name: RELEASE
+    runs-on: ubuntu-latest
+    steps:
+    - name: releasing...
+      run: echo 'tag v1.0'
+  deploy:
+    needs: release
+    name: DEPLOY
+    runs-on: ubuntu-latest
+    environment:
+      name: Link
+      url: https://login-page.vercel.app
+    steps:
+    - name: deploying...
+      run: echo 'execute script'
