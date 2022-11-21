@@ -1,0 +1,13 @@
+{
+  "name": "login-page",
+  "version": "1.0.0",
+  "description": "Template for auth projects",
+  "main": "main.js",
+  "repository": "git@github.com:JosiasPires/login-page.git",
+  "authors": [
+    "Antenor Pires",
+    "Josias Pires"
+  ],
+  "license": "MIT",
+  "private": false
+}
