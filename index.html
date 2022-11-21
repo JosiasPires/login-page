@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/style.css" />
+        <title>Login Page</title>
+    </head>
+    <body>
+        <div class="content">
+            <h2 class="title">CRM</h2>
+            <form name="form_login" id="form_login" class="form">
+                <label for="username" class="subtitle">
+                    Você tem uma conta?
+                </label>
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Usuário"
+                />
+                <div class="passwordBox">
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Senha"
+                    />
+                    <p id="toggle">T</p>
+                </div>
+                <a href="#" class="btnLogin">ENTRAR</a>
+                <div class="rememberMe">
+                    <input
+                        type="checkbox"
+                        name="remember"
+                        id="remember"
+                    />
+                    <label for="remember">
+                        Lembre-se de mim
+                    </label>
+                </div>
+            </form>
+            <a href="#">Esqueci minha senha</a>
+        </div>
+        <script src="assets/script.js"></script>
+        <script>
+            document
+                .querySelector('#toggle')
+                .addEventListener('click', () => {
+                    let pwd = document.querySelector('#password');
+                    if (pwd.type === 'password') {
+                        pwd.type = 'text';
+                    } else {
+                        pwd.type = 'password';
+                    }
+                })
+        </script>
+    </body>
+</html>
