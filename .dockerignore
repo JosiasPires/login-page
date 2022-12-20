@@ -5,4 +5,10 @@ build/
 node_modules/
 
 # Files
+.dockerignore
+.editorconfig
 .env*
+.gitignore
+docker-compose.yml
+Dockerfile
+*.md
