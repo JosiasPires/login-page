@@ -7,6 +7,4 @@
 ## Functions:
 - Template Auth Page
 
-
-
 ##[LICENSE](https://github.com/JosiasPires/login-page/LICENSE)
