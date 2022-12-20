@@ -1,21 +1,19 @@
 name: CD
 on:
-  push:
+  workflow_dispatch:
     branches:
       - main
       - develop
-  workflow_dispatch:
-    branches:
-      - release/*
       - hotfix/*
-      - feature/*
+      - release/*
       - bugfix/*
+      - feature/*
 jobs:
   approval:
     name: AUTHORIZATION
     runs-on: ubuntu-latest
     steps:
-    - name: authorizing...
+    - name: Authorizing...
       uses: trstringer/manual-approval@v1
       with:
         secret: ${{ github.TOKEN }}
@@ -27,7 +25,7 @@ jobs:
     name: RELEASE
     runs-on: ubuntu-latest
     steps:
-    - name: releasing...
+    - name: Releasing...
       run: echo 'tag v1.0'
   deploy:
     needs: release
@@ -35,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Link
-      url: https://login-page.vercel.app
+      url: https://josiaspires.github.io/login-page/
     steps:
-    - name: deploying...
+    - name: Deploying...
       run: echo 'execute script'

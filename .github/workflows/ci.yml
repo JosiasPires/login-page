@@ -6,11 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout latest version
-      uses: actions/checkout@v2
+      uses: actions/checkout@main
       with:
         fetch-depth: 0
     - name: check with nodejs ^16
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@main
       with:
         node-version: '16.x'
     - name: install dependencies
@@ -23,11 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout latest version
-      uses: actions/checkout@v2
+      uses: actions/checkout@main
       with:
         fetch-depth: 0
     - name: check with nodejs ^16
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@main
       with:
         node-version: '16.x'
     - name: install dependencies
