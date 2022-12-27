@@ -4,11 +4,6 @@ import './style.css';
 const App = () => {
 	const [username, setUsername] = useState<String>('');
 	const [password, setPassword] = useState<String>('');
-	const token = sessionStorage.getItem('token');
-
-	if(token) {
-      window.location.href = `${process.env.REACT_APP_TARGET_URL}?code=${token}`;
-	}
 
 	const handleSubmit = () => {
 		(async () => {
@@ -24,12 +19,13 @@ const App = () => {
           		})
         	})
         	.then(response =>response.json())
-        	.then(json => {
-          		const { user, jwt } = json;
-          		if(user) sessionStorage.setItem('token', jwt);
-          		document.location.reload();
+        	.then(data => {
+          		const { user, jwt } = data;
+          		if(user) {
+                    window.location.href = `${process.env.REACT_APP_TARGET_URL}?code=${jwt}`;
+                }
         	})
-        	.catch(error => console.log("Error:", error))
+        	.catch(error => console.error(error))
             .finally(() => console.log("End"));
       	})();
   	}
