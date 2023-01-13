@@ -96,6 +96,16 @@ body {
     font-size: 0.9rem;
 }
 
+.loader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.btnLogin:hover {
+    cursor: pointer;
+}
+
 .rememberMe label {
     cursor: pointer;
     color: #fdcfb6;
