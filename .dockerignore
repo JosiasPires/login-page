@@ -1,8 +1,12 @@
 # Directory
 .git
 .github/
-build/
-node_modules/
+.vscode/
 
 # Files
-.env*
+.dockerignore
+.editorconfig
+.gitignore
+docker-compose.yml
+Dockerfile
+*.md
