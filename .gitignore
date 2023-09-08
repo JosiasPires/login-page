@@ -1,7 +1,5 @@
 # Directory
-build/
-node_modules/
+.vercel/
+.vscode/
 
 # Files
-.env*
-!.env.example
