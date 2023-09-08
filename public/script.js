@@ -17,11 +17,11 @@ document.getElementById("button_login").addEventListener("click", (e) => {
 
     if(identifier && password) {
         (async () => {
-            await fetch("<API_URL>", {
+            await fetch("/api", {
                 method: 'POST',
                 headers: {
                     "Content-type": "application/json",
-                    "Authorization": "Bearer <API_TOKEN>"
+                    "Authorization": "Bearer toBeModified"
                 },
                 body: JSON.stringify({
                     identifier,
@@ -40,6 +40,6 @@ document.getElementById("button_login").addEventListener("click", (e) => {
     }
 });
 
-const target = "<TARGET_URL>";
+const target = "https://market.cariridigital.com.br";
 const token = sessionStorage.getItem('token');
 if(token) window.location.href = `${target}?code=${token}`;

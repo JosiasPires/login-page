@@ -1,6 +1,7 @@
 # Directory
 .git
 .github/
+.vercel/
 .vscode/
 
 # Files
