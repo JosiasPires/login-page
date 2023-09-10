@@ -2,6 +2,7 @@
 FROM nginx:alpine
 # labels
 LABEL project="login-page"
+LABEL template="form-with-username-and-password"
 # default environments var
 ENV TZ='America/Fortaleza'
 # basic config
