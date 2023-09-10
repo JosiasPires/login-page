@@ -1,8 +1,8 @@
 # Directory
 .git
-.github/
-.vercel/
-.vscode/
+.github
+.vercel
+.vscode
 
 # Files
 .dockerignore
