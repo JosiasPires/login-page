@@ -15,6 +15,10 @@ document.getElementById("button_login").addEventListener("click", (e) => {
                 body: JSON.stringify({identifier})
             })
             .then(response =>response.json())
+            .then(data => {
+                const { status } = data;
+                if(status.email_exists) alert("Verifique seu e-mail para continuar");
+            })
             .catch(error => console.error(error))
             .finally(() => console.log("End"));
         })();
